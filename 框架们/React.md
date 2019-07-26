@@ -175,7 +175,57 @@ Redux中的store每个节点都是不可变数据，只要判断引用是否相�
 2. immutability-helper
 3. immer
 
-### Route
+## React Route
+
+1. 声明式
+2. 动态路由
+
+三种方式
+
+1. URL路径(BrowerRoute)
+2. hash路由(HashRoute) 低版本浏览器不支持路由变更不刷新页面
+3. 内存路由(MemoryRoute)
+
+基于路由配置进行资源组织
+
+1. 实现业务逻辑的松耦合
+2. 易于扩展，重构和维护
+3. 路由可实现Lazy Load
+
+### API
+
+```html
+import { Link } from 'react-router-dom'
+import { Prompt, Redirect, Switch } from 'react-router'
+
+<!-- 普通链接 不会触发浏览器刷新 -->
+<Link to="/about">About</Link>
+
+<!-- 类似Link 但是当浏览器地址匹配 NavLink 中的地址时 会添加当前选中状态 -->
+<NavLink to="/about" activeClassName="selected">About</NavLink>
+
+<!-- 满足条件时提示用户是否离开当前页 -->
+<Prompt when={formIsHalfFilledOut} message="确定离开？"/>
+
+<!-- 重定向当前页 常用于登录判断 -->
+<Redirect to="/dashboard"/>
+
+<!-- 路径匹配时显示对应组件 -->
+<Route exact path="/" component={Home} /> <!-- exact 是否精确匹配 有该属性则要求完全匹配 -->
+<Route path="/news" component={NewsFeed} />
+
+<!-- 同时匹配多个Route 可同时显示多个组件 -->
+<!-- 只显示第一个匹配的路由 -->
+<Switch>
+   <Route exact path="/" component={Home} />
+</Switch>
+```
+
+### 传递参数
+
+> path-to-regexp: 将字符串路径转换为正则表达式
+
+页面状态尽量通过URl参数传递： 用于链接分享后 可直接定位状态
 
 
 ---

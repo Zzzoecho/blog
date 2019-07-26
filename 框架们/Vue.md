@@ -72,6 +72,8 @@ function open(options) {
 <Child @hook:mounted="doSomething"/>
 ```
 
+阻止页面滑动 `@touchmove.prevent`
+
 阻止事件冒泡 `.stop`修饰符
 
 ## elementUI
