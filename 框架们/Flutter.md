@@ -41,6 +41,9 @@ State 的实现步骤：
 编写自己的代码片段
 
 ```dart
+import 'package:flutter/rendering.dart';
+debugPaintSizeEnabled = true; // 页面样式调试 main 方法中加入
+
 // 获取屏幕宽度
 double width = MediaQuery.of(context).size.width;
 
@@ -102,6 +105,7 @@ Container
 ```dart
 Container(
     decoration: BoxDecoration( // 背景装饰 与 color 冲突
+        shape: BoxShape.circle, // 圆形
         color: Colors.black,
         borderRadius: BorderRadius.all(
             Radius.circular(7.0),
@@ -190,3 +194,6 @@ RotatedBox(
         child:
 )
 ```
+
+// TODO: mock token
+// String authorizationCode = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4Nl8xMzc2MTg4NDc0NiIsImF1dGgiOiJST0xFX1BJQ0tFUixST0xFX1VTRVIsUk9MRV9BRE1JTiIsImV4cCI6MTU3MjkzOTk5NywiaWF0IjoxNTY1MTYzOTk3LCJqdGkiOiIxMDAwMjAifQ.xlvsbCcVx95nMyQNz6OY_xZZOu9xONchXOKpJ80fSf3rQgKJKy_SaLgTce6M8ws2P9xsDDJpmMei0PF5TK72sQ';

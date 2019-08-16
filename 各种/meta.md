@@ -23,6 +23,12 @@
 <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
 <meta name="HandheldFriendly" content="true">
 
+<!-- 不被网页(加速)转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<!-- 搜索引擎抓取 -->
+<meta name="robots" content="index,follow">
+
 <!-- 删除苹果默认的工具栏和菜单栏 -->
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
