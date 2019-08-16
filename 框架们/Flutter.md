@@ -1,5 +1,10 @@
 # Flutter
 
+## 发布
+
+build_ios.sh `BUILD_MODE` 改为 release
+执行 `sh ./build_ios.sh` 会打包发布到 repo, ios 开发拉一下包即可
+
 ## Dart 语法
 
 声明:

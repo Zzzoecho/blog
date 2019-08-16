@@ -115,6 +115,34 @@ console.log(NaN + {}) // "NaN[object Object]" 含有对象会转为原始值，�
 - 等式两边都会尽可能转为 Number 类型，如果在转为数字的途中，已经是同一类型则不会进一步转换
 - null 和 undefined 宽松相等, 除此之外任何值都不会和他俩宽松 / 严格相等
 
+### 流程控制语句
+
+#### for in 语句
+
+返回属性的顺序可能会因浏览器而异, 没有规范, 不要依赖他的返回顺序
+
+Reflect.ownKeys ，Object.getOwnPropertyNames，Object.getOwnPropertySymbols 是由 ES6 规范 [[OwnPropertyKeys]] 算法定义的:
+
+- 首先顺序返回整数的属性(数组的属性)
+- 依次按照创建顺序返回字符串属性
+- 最后返回所有符号属性
+
+#### label
+
+多用于多层循环嵌套, 可以指定标签来退出更外层的循环
+
+#### switch 语句
+
+switch 语句中 case 的判断条件是严格相等
+
+### 函数
+
+函数的参数被保存在一个叫`arguments` 的类数组对象中, length 代表执行函数时传入的参数个数, 而不是函数定义时的参数个数
+
+非严格模式下, 当参数被修改时会反映到 arguments 上. 严格模式不会建立这种链接
+
+虽然现在仍可以使用, 但ES6已经将他废弃, 推荐使用剩余运算符(...)
+
 ------
 
 ## 内置对象
@@ -154,4 +182,3 @@ console.log(+obj2);     // 10      -- hint 参数值是 "number"
 console.log(`${obj2}`); // "hello" -- hint 参数值是 "string"
 console.log(obj2 + ""); // "true"  -- hint 参数值是 "default"
 ```
-

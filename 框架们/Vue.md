@@ -156,7 +156,7 @@ computed: {
 
 ### 获取事件默认回调参数
 
-arguments 获取作用域下可用变量
+arguments 获取作用域下可用变量 (ES6废弃, 不推荐使用)
 
 大多数情况 $event = arguments[0]
 
