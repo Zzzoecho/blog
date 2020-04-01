@@ -2,7 +2,7 @@
 
 ## 踩坑
 
-Cannot assign to read only property 'exports' of object '#<Object>'
+`Cannot assign to read only property 'exports' of object '#<Object>'`
 在webpack打包的时候，可以在js文件中混用require和export。但是不能混用import 以及module.exports。
 因为webpack 2中不允许混用import和module.exports
 
@@ -98,6 +98,29 @@ module: {
           ]
       }
     }
+```
+
+## 有趣的用处
+
+导出 `variables.scss` 里定义的变量到 js 中使用
+
+```scss
+$primary: #5A69F3 !default;
+$white: #FFFFFF !default;
+
+:export {
+  primaryColor: $primary;
+  whiteColor: $white;
+}
+
+// index.vue
+import variables from 'variables.scss'
+computed: {
+  variables() {
+    return vatiables
+  }
+ }
+
 ```
 
 ## 优化

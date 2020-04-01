@@ -1,5 +1,108 @@
 # React
 
+## API
+
+`React.createElement(type, [props], [...children])`
+
+type -- 标签名, React 组件
+children
+
+## propTypes
+
+`npm install --save prop-types`
+production 不会使用 prop-types
+
+```js
+Icon.propTypes = {
+  name: PropTypes.string.isRequired,
+  size: PropTypes.number,
+}
+
+Icon.defaultProps = {
+  size: 30,
+}
+```
+
+原理
+
+```js
+SayHello.proptypes = {
+  firstName: (props, propName, componentName) {
+    if (typeof props[propName] !== 'string) {
+      return new Error(`hey, you should pass a string for ${propName} in ${componentName} buy you passed a ${typeof props[propName]}`)
+    }
+  }
+}
+
+// 提取出类型检测
+const PorpTypes = {
+  string(props, propName, componentName) {
+    if (typeof props[propName] !== 'string) {
+      return new Error(`hey, you should pass a string for ${propName} in ${componentName} buy you passed a ${typeof props[propName]}`)
+    }
+  },
+}
+
+SayHello.propTypes = {
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+}
+
+// 使用 prop-types 一般放在类中的静态方法
+class SayHello extends React.Component {
+  static propTypes = {
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+  }
+
+  render() {
+
+  }
+}
+
+```
+
+```js
+//指定枚举类型：你可以把属性限制在某些特定值之内
+optionalEnum: PropTypes.oneOf(['News', 'Photos']),
+
+// 指定多个类型：你也可以把属性类型限制在某些指定的类型范围内
+optionalUnion: PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.number,
+  PropTypes.instanceOf(Message)
+]),
+
+// 指定某个类型的数组
+optionalArrayOf: PropTypes.arrayOf(PropTypes.number),
+
+// 指定类型为对象，且对象属性值是特定的类型
+optionalObjectOf: PropTypes.objectOf(PropTypes.number),
+
+```
+
+## 生命周期
+
+挂载
+constructor
+getDerivedStateFromProps
+render
+componentDidMount
+
+更新
+getDerivedStateFromProps
+showComponentUpdate
+render
+getSnapshotBeforeUpdate
+componentDidUpdate
+
+卸载
+componentWillUnmount
+
+错误处理
+getDeviredStateFromError
+componentDidCatch
+
 ## 虚拟 DOM
 
 广度优先算法 (复杂度 O(n) 线性，性能好)
@@ -227,6 +330,112 @@ import { Prompt, Redirect, Switch } from 'react-router'
 
 页面状态尽量通过URl参数传递： 用于链接分享后 可直接定位状态
 
+### 使用 history 控制路由跳转
+
+在使用 react-router v3 的时候,跳转路由一般:
+
+1. 从 react-router 导出 browserHistory
+2. 使用 browserHistory.push()等方法操作路由跳转
+
+```js
+import browserHistory from 'react-router';
+
+export function addProduct(props) {
+  return dispatch =>
+    axios.post(`xxx`, props, config)
+      .then(response => {
+        browserHistory.push('/cart'); //这里
+      });
+}
+```
+
+但是!在 react-router v4 中, 不再提供好 browserHistory 等的导出
+
+解决方法:
+
+#### 1. 使用 withRouter
+
+withRouter高阶组件，提供了history让你使用~
+
+官方推荐做法, 但是这种方法用起来有点难受，比如我们想在redux里面使用路由的时候，我们只能在组件把history传递过去。。
+
+```js
+import React from "react";
+import {withRouter} from "react-router-dom";
+
+class MyComponent extends React.Component {
+  ...
+  myFunction() {
+    this.props.history.push("/some/Path");
+  }
+  ...
+}
+export default withRouter(MyComponent);
+```
+
+#### 2. 使用 Context
+
+react-router v4 在 Router 组件中通过 Context 暴露了一个router对象~
+
+在子组件中使用Context，我们可以获得router对象，如下面例子~
+
+```js
+import React from "react";
+import PropTypes from "prop-types";
+
+class MyComponent extends React.Component {
+  static contextTypes = {
+    router: PropTypes.object
+  }
+  constructor(props, context) {
+     super(props, context);
+  }
+  ...
+  myFunction() {
+    this.context.router.history.push("/some/Path");
+  }
+  ...
+}
+```
+
+当然，这种方法慎用~尽量不用。因为react不推荐使用context哦。在未来版本中有可能被抛弃哦。
+
+#### 3. hack
+
+v3中把我们传递给Router组件的history又暴露出来，让我们调用了, 而 v4 的BrowserRouter自己创建了 history, 并且不暴露出来.可以依旧 hi 使用 Router 组件, 自己创建 history
+
+```js
+// 1. 自己创建一个 history.js
+// src/history.js
+import createHistory from 'history/createBrowserHistory';
+export default createHistory();
+
+// 2. 使用 Router 组件
+import { Router, Link, Route } from 'react-router-dom';
+import history from './history';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router history={history}>
+      ...
+    </Router>
+  </Provider>,
+  document.getElementById('root'),
+);
+
+// 3. 其他地方使用
+import history from './history';
+
+export function addProduct(props) {
+  return dispatch =>
+    axios.post(`xxx`, props, config)
+      .then(response => {
+        history.push('/cart'); //这里
+      });
+}
+```
+
+#### 4. 自己实现一个 BrowserRouter
 
 ---
 
@@ -276,3 +485,80 @@ react-router
 
 - BrowserRouter 常用
 - hashRouter 带`#`号的路由，常用于静态页面
+
+## 全家桶
+
+react-dom
+
+- react-router React Router 核心
+- react-router-dom 用于 DOM 绑定的 React Router
+- react-router-native 用于 React Native 的 React Router
+- react-router-redux React Router 和 Redux 的集成
+- react-router-config 静态路由配置的小助手
+
+babel
+
+- @babel/core-babel核心模块
+- @babel/preset-env 编译ES6等
+- @babel/preset-react 转换JSX
+- @babel/plugin-transform-runtime: 避免 polyfill 污染全局变量，减小打包体积
+- @babel/polyfill: ES6 内置方法和函数转化垫片
+
+## 单元测试
+
+1. Jest: Facebook 开源的 JS 单元测试框架
+2. JS DOM: 浏览器环境的 NodeJS 模拟
+3. Enzyme: React 组件渲染和测试 (airbnb)
+4. nock: 模拟 HTTP 请求
+5. sinon: 函数模拟和调用跟踪
+6. istanbul: 单元测试覆盖率
+
+## 前端应用
+
+可维护, 可扩展, 可测试, 易开发, 易构建
+
+易于测试: 功能分层是否清晰, 副作用少, 尽量使用纯函数
+
+### 项目拆分
+
+1. 按领域模型(feature)组织代码, 降低耦合度
+2.
+
+## 优秀文章
+
+[React ES5、ES6+ 常见用法对照表](https://github.com/carlleton/reactjs101/tree/zh-CN/Appendix01)
+
+## 项目搭建
+
+脚手架
+
+- npx create-react-app my-app
+
+react-router
+
+- react-router-dom
+
+代码规范
+
+- husky: commit 时校验, 未通过不可提交
+
+```js
+"script": {
+  "precommit": "lint-staged" // commit 前执行 'lint-staged'
+}
+```
+
+- lint-staged: 只校验改动的文件
+
+```js
+"lint-staged": {
+    "src/**/*.{js,jsx}": [ // 校验文件后缀
+      "eslint --fix", // 代码规范 --fix 自动修复 (规范上前面带小扳手的就是可以自动fix的)
+      "prettier --write", // 代码格式化 --write 自动改写文件
+      "git add"
+    ]
+},
+```
+
+- eslint
+- prettier

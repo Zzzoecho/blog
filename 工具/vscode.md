@@ -6,10 +6,12 @@
 
 ## 常用快捷键
 
-| 快捷键 | 意义                 |
-| ------ | -------------------- |
-| ⌘K M   | change file language |
-| ⌘K V   | preview markdown     |
+| 快捷键      | 意义                 |
+| ----------- | -------------------- |
+| ⌘K M        | change file language |
+| ⌘K V        | preview markdown     |
+| alt shift U | 上传 vscode 配置     |
+| alt shift D | 下载 vscode 配置     |
 
 ## 插件
 
@@ -20,4 +22,8 @@
 | clg    | console.log()                               |
 | sto    | setTimeOut                                  |
 | prom   | return new Promise((resolve, reject) => {}) |
-|thenc | .then(res => {}).catch(err => {})|
+| thenc  | .then(res => {}).catch(err => {})           |
+| fof    | for...of                                    |
+| fin    | for...in                                    |
+| dob    | 解构赋值                                    |
+| sto    | setTimeout                                  |
