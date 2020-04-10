@@ -308,6 +308,10 @@ Object的键名只能是字符串和Symbol类型
 
 ## 原型和原型链
 
+
+
+![关系图](/Users/zoe/Desktop/FrontEnd/docs/前端/image-20200408183202743.png)
+
 ## this
 
 ### call, apply, bind

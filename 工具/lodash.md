@@ -6,9 +6,9 @@
 | -------------------------------------- | --------------------------------------------- |
 | _.pick(obj, ['xx', 'bb'])              | 从对象中挑出对应属性 返回新对象               |
 | _.omit(obj, ['xx'])                    | 与pick相反，从对象中剔除对应属性 返回新对象   |
-| _.map()                                |
-| _.cloneDeep()                          |深拷贝
-| _.debounce()                           |
+| _.map()                                ||
+| _.cloneDeep()                          |深拷贝|
+| _.debounce()                           ||
 | _.get(obj, '')                         | 获取对象中指定path的值                        |
 | _.has(obj, 'xx' / a.b / [a,b])         | 判断对象层级中是否有该属性 返回布尔值         |
 | _.hasIn(obj, path)                     | 同.has 但包括继承属性                         |
@@ -23,3 +23,6 @@
 | _.pickBy(params, _.identity)           | 过滤一切不为真的值                            |
 | _.compact()                            | 过滤假值false, null, 0, "", undefined, 和 NaN |
 | _.get(fruit, 'name', 'unknown')        | 获取属性，如果不存在 则给一个默认值 unknown   |
+
+
+

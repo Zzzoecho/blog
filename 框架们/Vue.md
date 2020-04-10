@@ -1,10 +1,5 @@
 # Vue
 
-TODO:
-编辑 数组直接赋值 ok
-用下标修改数组 无效?
-set 修改数组 无效?
-
 ## 路由
 
 ### 多层路由嵌套, 子路由不显示
@@ -293,7 +288,7 @@ vue 组件细则
 
 ## 项目搭建
 
-坑
+### 坑
 
 全局引入 scss 文件报错. `Invalid options object. Sass Loader has been initialized using an options object that does not match the API schema.`
 
@@ -303,3 +298,17 @@ npm uninstall --save-dev sass-loader
 npm install --save-dev sass-loader@7.1.0
 ```
 If you use vue cli 3, it works with sass-loader v7 not with v8 if you use vue cli 3 and sass-loader v7 the previous configuration still works.
+
+
+
+## Vue Route
+
+history 模式刷新404问题:
+
+- 线上, 需要修改 nginx 配置
+- 本地, 
+  1. 需要修改 webpack 配置, `historyApiFallback: true` 将404响应全用 index.html 兜住 (vue-cli 应该不用手动改)
+  2. devserver.proxy 不能 proxy `/`, 会导致路由被当成请求. 给请求加上统一前缀...
+
+
+

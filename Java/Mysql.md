@@ -2,7 +2,8 @@
 
 公司: 测试库 10.1.4.11
 
-进入 mysql `mysql -uroot`
+1. 进入 mysql `mysql -uroot` 
+2. 本地 `mycli -u[user] -h[server] -p[password] `
 
 ## 基本命令
 

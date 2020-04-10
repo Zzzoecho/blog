@@ -251,7 +251,7 @@ FETCH_LIST_SUCCESS
 FETCH_LIST_FAILURE
 ```
 
-### 如何组织Acton和Reducer
+### 如何组织Action和Reducer
 
 > 标准形式：所有Action放一个文件，Action和Reducer分开
 
@@ -562,3 +562,6 @@ react-router
 
 - eslint
 - prettier
+
+
+

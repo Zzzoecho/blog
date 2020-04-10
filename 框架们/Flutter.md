@@ -2,17 +2,24 @@
 
 ## 开发
 
-1. 修改 flutter 使用 debug 版本
-2. flutter attach
+1. 确认使用 debug 包
+2. 运行 App
+3. flutter attach
 
-如果执行了`flutter package get`, 那么就要进到`andoridx_compat`目录下执行一下 sh
 
-## 更新 debug 版本
 
-- ios 更改 `build_ios.sh`中的`BUILD_MODE=debug` & 修改`picku-ios`下的`podfile FLUTTER_DEBUG_APP=true`
+>  安卓如果执行了`flutter package get`, 那么就要进到`andoridx_compat`目录下执行一下 sh
+
+
+
+## 使用 debug 包
+
+- ios 更改 `build_ios.sh`中的`BUILD_MODE=debug` 并且 修改 `picku-ios` 下的 `podfile FLUTTER_DEBUG_APP=true` =>  `pod install`
 - Android 运行 `build_debug_android.sh`
 
 2020.03.18 目前使用的 flutter 版本: v1.9.1+hotfix.6
+
+
 
 ## 发布
 
