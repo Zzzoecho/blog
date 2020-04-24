@@ -2,9 +2,10 @@
 
 ## 开发
 
-1. 确认使用 debug 包
-2. 运行 App
-3. flutter attach
+1. 修改 `build_ios.sh` 下的 FLUTTER_ROOT 为本地 Flutter SDK 路径
+2. 确认使用 debug 包
+3. 运行 App
+4. flutter attach
 
 
 
