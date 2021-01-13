@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-13T16:06:18.477Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="CAhC_iKQhTKwd6um6NOG" version="14.1.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-13T18:01:16.990Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="Ol9amQ89qUzkco8bs3WX" version="14.1.9" type="github">
   <diagram id="k_UBauENXQtYFpCN6dBz" name="第 1 页">
-    <mxGraphModel dx="497" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="904" dy="1402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -15,11 +15,11 @@
         </mxCell>
         <mxCell id="IA-yXFhUtC8VcQhEP3Hl-5" value="" style="endArrow=none;dashed=1;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="IA-yXFhUtC8VcQhEP3Hl-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="70" y="600" as="sourcePoint" />
+            <mxPoint x="70" y="630" as="sourcePoint" />
             <mxPoint x="280" y="370" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-9" value="" style="endArrow=none;dashed=1;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="IA-yXFhUtC8VcQhEP3Hl-4">
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-9" value="" style="endArrow=none;dashed=1;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="IA-yXFhUtC8VcQhEP3Hl-29" target="IA-yXFhUtC8VcQhEP3Hl-4">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="377" y="600" as="sourcePoint" />
             <mxPoint x="417" y="370" as="targetPoint" />
@@ -69,16 +69,16 @@
             <mxPoint x="70" y="280" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-24" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-24" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
           <mxGeometry x="557" y="260" width="20" height="20" as="geometry" />
         </mxCell>
         <mxCell id="IA-yXFhUtC8VcQhEP3Hl-25" value="" style="endArrow=none;dashed=1;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="IA-yXFhUtC8VcQhEP3Hl-24">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="567" y="600" as="sourcePoint" />
+            <mxPoint x="567" y="630" as="sourcePoint" />
             <mxPoint x="567" y="120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-26" value="" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1">
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-26" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="70" y="320" as="sourcePoint" />
             <mxPoint x="380" y="320" as="targetPoint" />
@@ -86,6 +86,71 @@
         </mxCell>
         <mxCell id="IA-yXFhUtC8VcQhEP3Hl-27" value="三次握手建立 TCP 连接&lt;br&gt;( HTTPS则再完成 TLS/SSL 握手 )" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="IA-yXFhUtC8VcQhEP3Hl-26">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-28" value="" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="350" as="sourcePoint" />
+            <mxPoint x="70" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-29" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="367" y="320" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-30" value="" style="endArrow=none;dashed=1;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="IA-yXFhUtC8VcQhEP3Hl-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="377" y="630" as="sourcePoint" />
+            <mxPoint x="377" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-31" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="380" as="sourcePoint" />
+            <mxPoint x="70" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="130" y="380" />
+              <mxPoint x="130" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-32" value="构造 HTTP 请求, 填充上下文至 HTTP 头部" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="IA-yXFhUtC8VcQhEP3Hl-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-33" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="470" as="sourcePoint" />
+            <mxPoint x="380" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-34" value="发起 HTTP 请求" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="IA-yXFhUtC8VcQhEP3Hl-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-35" value="接收到携带 HTML 页面为包体的 HTTP 响应" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="500" as="sourcePoint" />
+            <mxPoint x="70" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-37" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="367" y="470" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-38" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="520" as="sourcePoint" />
+            <mxPoint x="70" y="580" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="120" y="520" />
+              <mxPoint x="120" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-39" value="渲染引擎解析响应, 渲染包体至界面, &lt;br&gt;并根据超链接构造其他 HTTP 请求" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="IA-yXFhUtC8VcQhEP3Hl-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IA-yXFhUtC8VcQhEP3Hl-40" value="发送获取页面内资源的 HTTP 请求" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="610" as="sourcePoint" />
+            <mxPoint x="380" y="610" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
